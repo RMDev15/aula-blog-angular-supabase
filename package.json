@@ -1,0 +1,12 @@
+{
+  "name": "aula-blog-v4-angular",
+  "version": "1.0.0",
+  "description": "Projeto Aula Blog adaptado para Supabase e pronto para implantar na Vercel",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Pronto para deploy na Vercel!'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
