@@ -1,13 +1,53 @@
-
 ---
 
-# README - Aula Blog (Supabase & AngularJS)
+README - Aula Blog (Supabase & AngularJS)
+--- 
 
-Este documento explica como gerenciar e manipular os dados (inserir, editar e excluir) da tabela `postagens` no banco de dados Supabase integrado a este projeto.
+Este documento explica como clonar, executar localmente e gerenciar os dados (inserir, editar e excluir) da tabela de postagens no banco de dados Supabase integrado a este projeto.
 
----
+======================================================================
+1. COMO CLONAR E EXECUTAR O PROJETO LOCALMENTE
+======================================================================
 
-## 🛠️ Como Manipular o Banco de Dados
+Pré-requisitos:
+- Git (https://git-scm.com/)
+- Node.js (https://nodejs.org/)
+
+Passo a Passo:
+
+1. Clonar o Repositório:
+git clone https://github.com/RMDev15/aula-blog-angular-supabase.git
+
+2. Acessar a Pasta do Projeto:
+cd aula-blog-angular-supabase
+
+3. Instalar Dependências (Opcional/Se aplicável):
+npm install
+
+4. Executar o Projeto Localmente:
+- Opção 1 (Servidor HTTP local via Node.js):
+  npx http-server .
+
+- Opção 2 (Direto no navegador):
+  Como é um projeto estático, basta abrir o arquivo index.html diretamente no seu navegador ou utilizar a extensão Live Server no VS Code.
+
+======================================================================
+2. ESTRUTURA DA BASE DE DADOS (SUPABASE)
+======================================================================
+
+Tabela utilizada para o armazenamento dos artigos do blog (publicacoes):
+
+Campo        | Tipo        | Descrição
+----------------------------------------------------------------------
+id           | int8        | Identificador único da publicação (Primary Key)
+titulo       | text        | Título da publicação
+conteudo     | text        | Texto/Corpo completo da publicação
+imagem       | text        | URL da imagem de capa
+created_at   | timestamptz | Data e hora de criação do registro
+
+======================================================================
+3. COMO MANIPULAR O BANCO DE DADOS (BlogAdmin)
+======================================================================
 
 Todas as operações de banco de dados podem ser executadas diretamente pelo **Console do Desenvolvedor** do seu navegador (pressione `F12` ou clique com o botão direito > *Inspecionar* e vá na aba **Console**).
 
@@ -39,7 +79,6 @@ BlogAdmin.criar(
 
 
 ```
-
 ---
 ### 🔍 Como Identificar o ID (Índice) de Cada Postagem
 
@@ -95,10 +134,34 @@ BlogAdmin.deletar(1);
 
 ```
 
+
+======================================================================
+4. FUNCIONALIDADES DO PROJETO
+======================================================================
+
+- Lista de posts dinâmica integrada em tempo real com a API do Supabase.
+- Filtro de pesquisa de artigos por título ou conteúdo.
+- Alternância de tema claro/escuro via Bootstrap Dark Mode.
+- Painel administrativo (BlogAdmin) para criar, editar e apagar posts com atualização automática da interface (window.location.reload()).
+- Deploy e hospedagem contínua configurados na Vercel através da integração direta com o GitHub.
+
+
+
+======================================================================
+5. LINK DO PROJETO PUBLICADO
+======================================================================
+
+👉 https://aula-blog-angular-supabase-mnmyv5mdb-ramon-dev4.vercel.app/
+
+
+
+
+======================================================================
+6. 🚀 Como Executar o Projeto Localmente
+======================================================================
+
+- Certifique-se de que os arquivos principais (`index.html`, `post.html`, `app.js`, `script.js` e `style.css`) estão na mesma pasta.
+- Abra o arquivo `index.html` utilizando um servidor local (como a extensão **Live Server** no Visual Studio Code).
+- O blog carregará automaticamente todas as postagens diretamente da tabela `postagens` configurada no Supabase.
+
 ---
-
-## 🚀 Como Executar o Projeto Localmente
-
-1. Certifique-se de que os arquivos principais (`index.html`, `post.html`, `app.js`, `script.js` e `style.css`) estão na mesma pasta.
-2. Abra o arquivo `index.html` utilizando um servidor local (como a extensão **Live Server** no Visual Studio Code).
-3. O blog carregará automaticamente todas as postagens diretamente da tabela `postagens` configurada no Supabase.
